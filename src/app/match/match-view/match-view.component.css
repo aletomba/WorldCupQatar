@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  margin: auto;
+  background: black;
+}
+
+th{
+  width: 15%;
+  font-size: medium;
+  color:aliceblue;
+  border-color: aliceblue;
+}
+
+div{
+  width: 80%;
+  margin: auto;
+  height: 80%;
+
+}
+
+.pointer{ cursor: pointer;}
+
+h1{
+  text-align: center;
+  margin-top: auto;
+}
+a{
+  text-align: right;
+}
+td{
+  color: aliceblue;
+  border-color: aliceblue;
+}

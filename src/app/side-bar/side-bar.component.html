@@ -1,0 +1,54 @@
+<p>side-bar works!</p>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar color="secondary">
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon routerLink="match">home</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list role="list">
+      <mat-list-item>
+        <a routerLink='/match/match-view' (click)="sidenav.toggle()">
+          <button mat-raised-button color="accent">
+            <mat-icon mat-list-icon>sports_soccer</mat-icon>
+            PARTIDOS
+          </button>
+        </a>
+      </mat-list-item>
+
+    <mat-list-item>
+      <a routerLink="" (click)="sidenav.toggle()">
+        <button mat-raised-button color="accent">
+          <mat-icon mat-list-icon>group</mat-icon>
+          EQUIPOS
+        </button>
+      </a>
+    </mat-list-item>
+
+    <mat-list-item>
+      <a routerLink="/productos/agregar" (click)="sidenav.toggle()">
+        <button mat-raised-button color="accent">
+          <mat-icon mat-list-icon>person</mat-icon>
+          JUGADOR
+        </button>
+      </a>
+    </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar class='toolbar' color='primary'>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span>QATAR 2022</span>
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet>
+    </router-outlet>
+  </div>
+</mat-sidenav-container>
