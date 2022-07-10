@@ -14,6 +14,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button'
 import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatCommonModule} from '@angular/material/core';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [],
@@ -30,6 +40,18 @@ import {MatListModule} from '@angular/material/list';
     MatMenuModule,
     MatButtonModule,
     MatListModule,
+    MatSelectModule,
+    MatInputModule,
+    MatChipsModule,
+    FlexLayoutModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatBadgeModule,
+    MatCommonModule,
+    MatDialogModule,
+
+
+
 
     ],
     exports:[
@@ -45,7 +67,15 @@ import {MatListModule} from '@angular/material/list';
       MatMenuModule,
       MatButtonModule,
       MatListModule,
-
+      MatSelectModule,
+      MatInputModule,
+      MatChipsModule,
+      FlexLayoutModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatBadgeModule,
+      MatCommonModule,
+      MatDialogModule
     ]
 })
 export class SharedModule { }

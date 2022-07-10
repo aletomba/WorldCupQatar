@@ -1,8 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
+import { MatDialog} from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatchCreate } from '../interfaces/MatchCreateInterface';
 import { MatchViewModels } from '../interfaces/MatchViewInterface';
-import { MatchViewServiceService } from '../services/match-view-service.service';
+import { MatchCreateComponent } from '../match-create/match-create.component';
+import { MatchEditComponent } from '../match-edit/match-edit.component';
+import { MatchService } from '../services/match-service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-match-view',
@@ -12,23 +17,40 @@ import { MatchViewServiceService } from '../services/match-view-service.service'
 export class MatchViewComponent  {
 
 
-  private allmatches:MatchViewModels[]=[];
 
   displayedColumns: string[] = ['stadium', 'instance', 'soccerTeamLocal', 'soccerTeamVisit', 'matchDay','actions'];
 
-  dataSource = new MatTableDataSource<MatchViewModels>(this.allmatches);
+  dataSource!:MatTableDataSource<MatchViewModels>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private matchservice : MatchViewServiceService) {
-    this.Matches
+
+
+  constructor( private shareData:ShareService, private matchservice : MatchService,public dialog: MatDialog) {
+    this.Matches;
+
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;}
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(MatchEditComponent, {
+      width: '600px',
+      enterAnimationDuration,
+      exitAnimationDuration,
 
-get Matches() {
-  return this.matchservice.searchMatches().subscribe(resp => this.dataSource = resp);
+        })};
+
+    editMatch(match:MatchCreate){
+      this.shareData.open.emit(match)
+      console.log(match)
+    }
+
+
+  get Matches() {
+  return this.matchservice.searchMatches()
+  .subscribe(resp => {this.dataSource = new MatTableDataSource(resp);
+    this.dataSource.paginator = this.paginator;
+
+  })
 }
 
 }

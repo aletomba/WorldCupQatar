@@ -1,7 +1,7 @@
 table {
   width: 100%;
   margin: auto;
-  background: black;
+
 }
 
 th{
@@ -9,6 +9,7 @@ th{
   font-size: medium;
   color:aliceblue;
   border-color: aliceblue;
+  background-color: black;
 }
 
 div{
@@ -23,11 +24,19 @@ div{
 h1{
   text-align: center;
   margin-top: auto;
+  font-weight: bold;
+  margin-top: 3px;
 }
 a{
   text-align: right;
 }
 td{
-  color: aliceblue;
-  border-color: aliceblue;
+  color:black;
+  border-color: black;
+  font-weight: bold;
+}
+.btn-add{
+  margin-top: 0px;
+  font-weight: bold;
+
 }

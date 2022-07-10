@@ -1,5 +1,10 @@
 
-<h1>Enfrentamientos</h1>
+<h1 >ENFRENTAMIENTOS</h1>
+<br>
+
+<div class="btn-add" routerLink="/match/match-create">
+  <button mat-raised-button color="accent">Agragar Partido</button>
+</div>
 <br>
 
 <div class="mat-elevation-z10">
@@ -38,7 +43,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element">
-      <a class="pointer" style='color:green'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
+      <a class="pointer" (click)="openDialog('2000ms', '1000ms')" (click)="editMatch(element)" style='color:rgba(255, 187, 0, 0.986)'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
       <a class="pointer" style='color:red'  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
       </td>
     </ng-container>
