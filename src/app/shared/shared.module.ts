@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 //material
@@ -22,7 +23,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatCommonModule} from '@angular/material/core';
-import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 @NgModule({
@@ -49,6 +54,9 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
     MatBadgeModule,
     MatCommonModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
+
 
 
 
@@ -75,7 +83,11 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
       MatNativeDateModule,
       MatBadgeModule,
       MatCommonModule,
-      MatDialogModule
+      MatDialogModule,
+      ReactiveFormsModule,
+      MatProgressSpinnerModule,
+      MatProgressBarModule,
+      MatStepperModule
     ]
 })
 export class SharedModule { }

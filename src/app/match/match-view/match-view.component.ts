@@ -2,12 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatchCreate } from '../interfaces/MatchCreateInterface';
-import { MatchViewModels } from '../interfaces/MatchViewInterface';
+import { RouterLink } from '@angular/router';
+import { MatchCreateUpdate } from '../interfaces/match-create-update';
 import { MatchCreateComponent } from '../match-create/match-create.component';
-import { MatchEditComponent } from '../match-edit/match-edit.component';
 import { MatchService } from '../services/match-service';
-import { ShareService } from '../services/share.service';
+import { ShareService } from '../../services/share.service';
 
 @Component({
   selector: 'app-match-view',
@@ -17,31 +16,42 @@ import { ShareService } from '../services/share.service';
 export class MatchViewComponent  {
 
 
-
+  showSpinner = false
   displayedColumns: string[] = ['stadium', 'instance', 'soccerTeamLocal', 'soccerTeamVisit', 'matchDay','actions'];
 
-  dataSource!:MatTableDataSource<MatchViewModels>;
+  dataSource!:MatTableDataSource<MatchCreateUpdate>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
 
   constructor( private shareData:ShareService, private matchservice : MatchService,public dialog: MatDialog) {
+   this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner=false
+    }, 5000);
     this.Matches;
 
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(MatchEditComponent, {
+    this.dialog.open(MatchCreateComponent,{
       width: '600px',
       enterAnimationDuration,
       exitAnimationDuration,
 
         })};
 
-    editMatch(match:MatchCreate){
+  editMatch(match:MatchCreateUpdate){
       this.shareData.open.emit(match)
       console.log(match)
+      this.Matches
+    }
+
+  deleteMatch(id:undefined){
+    console.log(id);
+    this.matchservice.deleteMatch(id);
+    this.Matches
     }
 
 

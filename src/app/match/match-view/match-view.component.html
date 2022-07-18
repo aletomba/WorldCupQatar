@@ -2,8 +2,9 @@
 <h1 >ENFRENTAMIENTOS</h1>
 <br>
 
-<div class="btn-add" routerLink="/match/match-create">
-  <button mat-raised-button color="accent">Agragar Partido</button>
+<!-- <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar> -->
+<div  class="btn-add" (click)="openDialog('2000ms', '1000ms')">
+  <button  mat-raised-button color="accent">Agregar Partido</button>
 </div>
 <br>
 
@@ -14,37 +15,37 @@
     <!-- Position Column -->
     <ng-container matColumnDef="stadium">
       <th mat-header-cell *matHeaderCellDef> Estadio </th>
-      <td mat-cell *matCellDef="let element"> {{element.stadium}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.stadiumView}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="instance">
       <th mat-header-cell *matHeaderCellDef> Instancia </th>
-      <td mat-cell *matCellDef="let element"> {{element.instance}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.instanceView}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="soccerTeamLocal">
       <th mat-header-cell *matHeaderCellDef> Equipo local </th>
-      <td mat-cell *matCellDef="let element"> {{element.soccerTeamLocal}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.soccerTeamLocalView}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="soccerTeamVisit">
       <th mat-header-cell *matHeaderCellDef> Equipo visitante </th>
-      <td mat-cell *matCellDef="let element"> {{element.soccerTeamVisit}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.soccerTeamVisiView}} </td>
     </ng-container>
 
     <ng-container matColumnDef="matchDay">
       <th mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td mat-cell *matCellDef="let element"> {{element.matchDay}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.matchDay}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element">
       <a class="pointer" (click)="openDialog('2000ms', '1000ms')" (click)="editMatch(element)" style='color:rgba(255, 187, 0, 0.986)'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
-      <a class="pointer" style='color:red'  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
+      <a class="pointer" style='color:red' (click)="deleteMatch(element.idMatch)"  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
       </td>
     </ng-container>
 
@@ -54,3 +55,5 @@
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
+
+

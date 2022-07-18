@@ -5,11 +5,13 @@ import { SoccerteamRoutingModule } from './soccerteam-routing.module';
 import { SoccerteamViewComponent } from './soccerteam-view/soccerteam-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SoccerteamCreateComponent } from './soccerteam-create/soccerteam-create.component';
 
 
 @NgModule({
   declarations: [
-    SoccerteamViewComponent
+    SoccerteamViewComponent,
+    SoccerteamCreateComponent
   ],
   imports: [
     CommonModule,

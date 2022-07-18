@@ -1,4 +1,4 @@
 export interface InstaceView {
-  id:         number;
+  idInstance:  number;
   descrition: string;
 }

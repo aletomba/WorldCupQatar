@@ -1,4 +1,4 @@
-export interface StadiumView {
-  id?:   number;
+export interface StadiumView  {
+  idStadium?:   number;
   name?: string;
 }

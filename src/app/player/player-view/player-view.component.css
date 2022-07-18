@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+}
+h1{
+  font-weight: bold;
+  text-align: center;
+
+}
+.btn-add{
+  margin-top: 0px;
+  font-weight: bold;
+  margin: auto;
+
+}
+
+.container{
+width: 80%;
+margin: auto;
+margin-top: auto;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+th{
+  font-size: medium;
+  color:aliceblue;
+  border-color: aliceblue;
+  background-color: black;
+}
+td{
+  color:black;
+  border-color: black;
+  font-weight: bold;
+}
