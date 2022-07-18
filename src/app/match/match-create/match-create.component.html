@@ -1,0 +1,81 @@
+<br>
+<h1 style="font-weight: bold;">{{action}} Partido</h1>
+<br>
+<form appearance="fill" fxLayoutAlign="center" autocomplete="off" (ngSubmit)="saveOrUpdate()" [formGroup]="miForm">
+  <div fxLayout="row" fxLayoutGap="400px" fxLayout.xs="column">
+    <div fxFlex='100' fxLayout="column">
+      <div fxLayout="row" fxLayout.xl="column" fxLayoutGap="20px">
+        <mat-form-field fxFlex='300' fxLayout.gt-lg="column">
+          <mat-label>
+            Estadio
+          </mat-label>
+          <mat-select formControlName="stadium">
+            <mat-option *ngFor="let item of stadiums" [value]="item.idStadium">{{item.name}}</mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+        <mat-form-field fxFlex='100' fxLayout.xs="column">
+          <mat-label>
+            Instancia
+          </mat-label>
+          <mat-select formControlName="instance">
+            <mat-option *ngFor="let item of instace" [value]="item.idInstance">{{item.descrition}}</mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+        <mat-form-field fxFlex='100' fxLayout.xs="column">
+          <mat-label>
+            Equipo-1
+          </mat-label>
+          <mat-select formControlName="soccerTeamLocal">
+            <mat-option *ngFor="let item of countrys" [value]="item.idCountry"> {{item.country}} </mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+        <mat-form-field fxFlex='100' fxLayout.xs="column">
+          <mat-label>
+            Equipo-2
+          </mat-label>
+          <mat-select formControlName="soccerTeamVisit">
+            <mat-option *ngFor="let item of countrys" [value]="item.idCountry">{{item.country}}</mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Elegir fecha</mat-label>
+        <input formControlName="matchDay" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div class="button">
+        <div class="save" fxLayout>
+          <button mat-raised-button color="accent" type="submit">
+            <mat-icon>edit</mat-icon>
+            {{buttonName}}
+          </button>
+        </div>
+        <div class="cancel" fxLayout>
+
+          <button mat-raised-button mat-button mat-dialog-close cdkFocusInitial color="primary">
+            <mat-icon>close</mat-icon>
+            Cancelar
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

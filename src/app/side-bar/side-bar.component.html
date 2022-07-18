@@ -19,7 +19,7 @@
       </mat-list-item>
 
     <mat-list-item>
-      <a routerLink="" (click)="sidenav.toggle()">
+      <a routerLink="/soccerTeam/soccerTeam-View" (click)="sidenav.toggle()">
         <button mat-raised-button color="accent">
           <mat-icon mat-list-icon>group</mat-icon>
           EQUIPOS
@@ -28,7 +28,7 @@
     </mat-list-item>
 
     <mat-list-item>
-      <a routerLink="/productos/agregar" (click)="sidenav.toggle()">
+      <a routerLink="/player/player-view" (click)="sidenav.toggle()">
         <button mat-raised-button color="accent">
           <mat-icon mat-list-icon>person</mat-icon>
           JUGADOR
@@ -49,6 +49,7 @@
 
   <div class="container">
     <router-outlet>
+
     </router-outlet>
   </div>
 </mat-sidenav-container>

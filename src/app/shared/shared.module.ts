@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 //material
@@ -14,6 +15,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button'
 import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatCommonModule} from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+
+
 
 @NgModule({
   declarations: [],
@@ -30,6 +45,21 @@ import {MatListModule} from '@angular/material/list';
     MatMenuModule,
     MatButtonModule,
     MatListModule,
+    MatSelectModule,
+    MatInputModule,
+    MatChipsModule,
+    FlexLayoutModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatBadgeModule,
+    MatCommonModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
+
+
+
+
 
     ],
     exports:[
@@ -45,7 +75,19 @@ import {MatListModule} from '@angular/material/list';
       MatMenuModule,
       MatButtonModule,
       MatListModule,
-
+      MatSelectModule,
+      MatInputModule,
+      MatChipsModule,
+      FlexLayoutModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatBadgeModule,
+      MatCommonModule,
+      MatDialogModule,
+      ReactiveFormsModule,
+      MatProgressSpinnerModule,
+      MatProgressBarModule,
+      MatStepperModule
     ]
 })
 export class SharedModule { }

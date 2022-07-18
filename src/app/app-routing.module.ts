@@ -5,6 +5,14 @@ const routes: Routes = [
   {
     path:'match',
     loadChildren:()=>import('./match/match.module').then(m=>m.MatchModule)
+  },
+  {
+    path:'soccerTeam',
+    loadChildren:()=>import('./soccerTeam/soccerteam.module').then(m=>m.SoccerteamModule)
+  },
+  {
+    path:'player',
+    loadChildren:()=>import('./player/player.module').then(m=>m.PlayerModule)
   }
 ];
 
