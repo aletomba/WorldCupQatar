@@ -4,7 +4,12 @@ table {
 h1{
   font-weight: bold;
   text-align: center;
+  color: aliceblue;
+  background-color: black;
 
+}
+mat-divider{
+  background-color: aliceblue;
 }
 .btn-add{
   margin-top: 0px;
@@ -12,6 +17,8 @@ h1{
   margin: auto;
 
 }
+
+.pointer{ cursor: pointer;}
 
 .container{
 width: 80%;

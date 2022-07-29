@@ -1,12 +1,18 @@
 export interface MatchCreateUpdate {
-  idMatch?:             number|undefined|null;
-  stadiumView?:         string|undefined|null;
-  stadium?:             number|undefined|null;
-  instanceView?:        string|undefined|null;
-  instance?:            number|undefined|null;
-  soccerTeamLocalView?: string|undefined|null;
-  soccerTeamLocal?:     number|undefined|null;
-  soccerTeamVisiView?:  string|undefined|null;
-  soccerTeamVisit?:     number|undefined|null;
-  matchDay?:            string|undefined|null;
+  idMatch?:   number|undefined|null;
+  idStadium?:   number|undefined|null;
+  stadium:     string|undefined|null;
+  idTeam1?:     number|undefined|null;
+  team1:       string|undefined|null;
+  goalsTeam1?:  number|undefined|null;
+  groupTeam1?:  number|undefined|null;
+  idTeam2?:     number|undefined|null;
+  team2:       string|undefined|null;
+  goalsTeam2?:  string|undefined|null;
+  groupTeam2?:  string|undefined|null;
+  idMatchType?: number|undefined|null;
+  matchType:   string|undefined|null;
+  dataTime:    string|undefined|null;
+
 }
+

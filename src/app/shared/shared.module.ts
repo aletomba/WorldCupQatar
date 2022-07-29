@@ -27,6 +27,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -87,7 +89,10 @@ import {MatStepperModule} from '@angular/material/stepper';
       ReactiveFormsModule,
       MatProgressSpinnerModule,
       MatProgressBarModule,
-      MatStepperModule
+      MatStepperModule,
+      MatDividerModule,
+      MatGridListModule
+
     ]
 })
 export class SharedModule { }

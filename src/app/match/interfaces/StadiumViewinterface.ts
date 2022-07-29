@@ -1,4 +1,4 @@
 export interface StadiumView  {
-  idStadium?:   number;
-  name?: string;
+  idStadium:   number;
+  nameStadium: string;
 }

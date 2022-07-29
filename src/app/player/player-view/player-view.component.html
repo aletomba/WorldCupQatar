@@ -1,11 +1,11 @@
-<br>
+<mat-divider></mat-divider>
 <h1>
   Jugadores
 </h1>
-<br>
+
 <div class="container">
-  <div class="btn-add" (click)="openDialog('2000ms', '1000ms')">
-    <button  mat-raised-button color="accent">Agregar Jugador</button>
+  <div >
+    <button class="btn-add" (click)="openDialog('2000ms', '1000ms')"  mat-raised-button color="accent">Agregar Jugador</button>
   </div>
 
   <mat-form-field appearance="standard">
@@ -24,9 +24,9 @@
       </ng-container>
 
       <!-- Progress Column -->
-      <ng-container matColumnDef="lastName">
+      <ng-container matColumnDef="lastname">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
-        <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
       </ng-container>
 
       <!-- Name Column -->
@@ -41,13 +41,13 @@
         <td mat-cell *matCellDef="let row"> {{row.country}} </td>
       </ng-container>
 
-      <!-- <ng-container matColumnDef="actions">
+      <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-        <a class="pointer" (click)="openDialog('2000ms', '1000ms')" (click)="editMatch(element)" style='color:rgba(255, 187, 0, 0.986)'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
-        <a class="pointer" style='color:red' (click)="deleteMatch(element.idMatch)"  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
+        <a class="pointer" (click)="openDialog('2000ms', '1000ms')" (click)="editPlayer(element)" style='color:rgba(255, 187, 0, 0.986)'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
+        <a class="pointer" style='color:red' (click)="deletePlayer(element.idPLayer)"  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
         </td>
-      </ng-container> -->
+      </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

@@ -14,7 +14,7 @@ import { SoccerteamCreateComponent } from '../soccerteam-create/soccerteam-creat
 })
 export class SoccerteamViewComponent implements OnInit {
 
-  displayedColumns: string[] = ['country', 'group', 'goal', 'points','actions'];
+  displayedColumns: string[] = ['country', 'groupName', 'position','actions'];
 
   dataSource!:MatTableDataSource<SoccerTeamView>;
 
@@ -39,6 +39,7 @@ export class SoccerteamViewComponent implements OnInit {
   };
 
   editSoccerTeam(soccerteam: SoccerTeamView) {
+    console.log(soccerteam)
     this.shareData.open.emit(soccerteam)
     this.Soccerteam
   }

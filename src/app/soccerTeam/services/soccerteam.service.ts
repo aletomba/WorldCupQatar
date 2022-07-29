@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GroupView } from '../interfaces/group-view';
 import { SoccerTeamView } from '../interfaces/SoccerteamView';
 
 @Injectable({
@@ -9,31 +8,29 @@ import { SoccerTeamView } from '../interfaces/SoccerteamView';
 })
 export class SoccerteamService {
 
-  private url:string='http://localhost:1186'
+  private url:string='http://localhost:5187'
 
   constructor(private http:HttpClient) { }
 
   searchSoccerteam():Observable<SoccerTeamView[]>{
 
-    return this.http.get<SoccerTeamView[]>(this.url+'/api/SoccerTeam')
+    return this.http.get<SoccerTeamView[]>(this.url+'/api/Teams/all')
 
    }
 
    createSoccerTeam(soccer:SoccerTeamView){
-    return this.http.post(this.url+'/api/SoccerTeam',soccer).subscribe()
+    return this.http.post(this.url+'/api/Teams',soccer).subscribe()
    }
 
    updateSoccerTeam(soccer:SoccerTeamView){
-    return this.http.put(this.url+'/api/SoccerTeam',soccer).subscribe()
+    return this.http.put(this.url+'/api/Teams',soccer).subscribe()
    }
 
    deleteSoccerTeam(id:undefined){
-   return this.http.delete(this.url+'/api/SoccerTeam/'+id).subscribe()
+   return this.http.delete(this.url+'/api/Teams'+id).subscribe()
    }
 
    //----------------------------------GroupService-------------------------------
-   getGroups():Observable<GroupView[]>{
-    return this.http.get<GroupView[]>(this.url+'/api/Group')
-   }
+
 }
 

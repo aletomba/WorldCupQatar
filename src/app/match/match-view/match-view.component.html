@@ -1,10 +1,11 @@
-
+<mat-divider></mat-divider>
 <h1 >ENFRENTAMIENTOS</h1>
 <br>
 
 <!-- <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar> -->
-<div  class="btn-add" (click)="openDialog('2000ms', '1000ms')">
-  <button  mat-raised-button color="accent">Agregar Partido</button>
+<div>
+  <button class="btn-add" (click)="openDialog('2000ms', '1000ms')" mat-raised-button color="accent">Agregar Partido</button>
+  <button routerLink="/match/match-sixteen"  class="sixteen" mat-raised-button color="accent">Simular Octavos</button>
 </div>
 <br>
 
@@ -15,30 +16,38 @@
     <!-- Position Column -->
     <ng-container matColumnDef="stadium">
       <th mat-header-cell *matHeaderCellDef> Estadio </th>
-      <td mat-cell *matCellDef="let element"> {{element.stadiumView}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.stadium}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="instance">
+    <ng-container matColumnDef="matchType">
       <th mat-header-cell *matHeaderCellDef> Instancia </th>
-      <td mat-cell *matCellDef="let element"> {{element.instanceView}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.matchType}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="groupTeam1">
+      <th mat-header-cell *matHeaderCellDef> Grupo </th>
+      <td mat-cell *matCellDef="let element"> {{element.groupTeam1}} </td>
+    </ng-container>
     <!-- Weight Column -->
-    <ng-container matColumnDef="soccerTeamLocal">
-      <th mat-header-cell *matHeaderCellDef> Equipo local </th>
-      <td mat-cell *matCellDef="let element"> {{element.soccerTeamLocalView}} </td>
+    <ng-container matColumnDef="team1">
+      <th mat-header-cell *matHeaderCellDef> Equipo 1 </th>
+      <td mat-cell *matCellDef="let element"> {{element.team1}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="goals">
+      <th mat-header-cell *matHeaderCellDef> Resultado </th>
+      <td  mat-cell *matCellDef="let element"> {{element.goalsTeam1 +' ----------- '+ element.goalsTeam2}} </td>
+    </ng-container>
     <!-- Symbol Column -->
-    <ng-container matColumnDef="soccerTeamVisit">
-      <th mat-header-cell *matHeaderCellDef> Equipo visitante </th>
-      <td mat-cell *matCellDef="let element"> {{element.soccerTeamVisiView}} </td>
+    <ng-container matColumnDef="team2">
+      <th mat-header-cell *matHeaderCellDef> Equipo 2 </th>
+      <td  mat-cell *matCellDef="let element"> {{element.team2}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="matchDay">
+    <ng-container matColumnDef="dataTime">
       <th mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td  mat-cell *matCellDef="let element"> {{element.matchDay}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.dataTime}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -46,6 +55,7 @@
       <td mat-cell *matCellDef="let element">
       <a class="pointer" (click)="openDialog('2000ms', '1000ms')" (click)="editMatch(element)" style='color:rgba(255, 187, 0, 0.986)'  matTooltip="Editar partidos"><mat-icon>edit</mat-icon></a>
       <a class="pointer" style='color:red' (click)="deleteMatch(element.idMatch)"  matTooltip="Eliminar Partidos"><mat-icon>delete</mat-icon></a>
+      <a class="pointer" (click)="openDialogResult('2000ms', '1000ms')" (click)="editMatch(element)" style='color:rgba(14, 22, 22, 0.986)'  matTooltip="Comenzar Partido"><mat-icon>sports_soccer</mat-icon></a>
       </td>
     </ng-container>
 
@@ -53,7 +63,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[6, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
 
 

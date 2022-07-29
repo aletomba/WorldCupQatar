@@ -1,0 +1,22 @@
+<mat-divider></mat-divider>
+<div class="container">
+
+<mat-grid-list cols="2" rowHeight="7:1">
+  <mat-grid-tile *ngFor="let item of roundofsix">vs
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <mat-card>
+          {{item.team1}}
+        </mat-card>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <mat-card>
+          {{item.team2}}
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+</mat-grid-list>
+<h1>Octavos de Final</h1>
+</div>
+

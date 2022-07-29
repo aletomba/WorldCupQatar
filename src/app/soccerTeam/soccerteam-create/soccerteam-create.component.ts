@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ShareService } from 'src/app/services/share.service';
-import { GroupView } from '../interfaces/group-view';
 import { SoccerTeamView } from '../interfaces/SoccerteamView';
 import { SoccerteamService } from '../services/soccerteam.service';
 
@@ -12,7 +11,7 @@ import { SoccerteamService } from '../services/soccerteam.service';
 })
 export class SoccerteamCreateComponent implements OnInit {
 
-  private allGroups: GroupView[] = [];
+
   action = "Crear"
   buttonName = "Guardar"
   newSoccerTeam!: SoccerTeamView
@@ -20,7 +19,8 @@ export class SoccerteamCreateComponent implements OnInit {
 
   miForm = this.formBuilder.group({
     country: [, [Validators.required]],
-    group: [, [Validators.required]],
+    groupName: [, [Validators.required]],
+    position: [, [Validators.required]],
   });
 
   constructor(private formBuilder: FormBuilder, private soccerService: SoccerteamService, private shareData: ShareService) {
@@ -34,17 +34,16 @@ export class SoccerteamCreateComponent implements OnInit {
       this.editSoccerteam = resp
       this.miForm.patchValue({
         country: resp.country,
-        group: resp.idGroup
+        groupName: resp.groupName,
+        position:resp.position
       })
     })
   }
 
-  get groups() {
-    return this.allGroups
-  }
+
 
   ngOnInit(): void {
-    this.group
+
   }
 
   saveOrEdit() {
@@ -63,34 +62,25 @@ export class SoccerteamCreateComponent implements OnInit {
     console.log('saving')
     this.newSoccerTeam = {
       country: this.miForm.controls['country'].value,
-      idGroup: this.miForm.controls['group'].value,
-      goal: 0,
-      points: 0
+      groupName: this.miForm.controls['groupName'].value,
+      position: this.miForm.controls['position'].value
     }
-    this.soccerService.createSoccerTeam(this.newSoccerTeam)
+    // this.soccerService.createSoccerTeam(this.newSoccerTeam)
     console.log(this.newSoccerTeam)
   }
 
   editSoccerTeam() {
     console.log('editing')
     this.newSoccerTeam = {
-      idCountry: this.editSoccerteam.idCountry,
+      idTeam: this.editSoccerteam.idTeam,
       country: this.miForm.controls['country'].value,
-      idGroup: this.miForm.controls['group'].value,
-      goal: 0,
-      points: 0
+      groupName: this.miForm.controls['groupName'].value,
+      position:this.miForm.controls['position'].value,
     }
-    this.soccerService.updateSoccerTeam(this.newSoccerTeam)
+    // this.soccerService.updateSoccerTeam(this.newSoccerTeam)
     console.log(this.newSoccerTeam)
   }
 
-  //------------------------select Group------------------
-
-  get group() {
-    return this.soccerService.getGroups().subscribe(resp => {
-      this.allGroups = resp
-    })
-  }
 }
 
 

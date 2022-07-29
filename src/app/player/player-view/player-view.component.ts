@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ShareService } from 'src/app/services/share.service';
+import { CreateUpdatePlayer } from '../interfaces/create-update-player';
 import { PlayerView } from '../interfaces/player-view';
 import { PlayerCreateComponent } from '../player-create/player-create.component';
 import { PlayerService } from '../services/player.service';
@@ -15,22 +17,26 @@ import { PlayerService } from '../services/player.service';
 export class PlayerViewComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['name', 'lastName', 'position', 'country'];
-  dataSource!: MatTableDataSource<PlayerView>;
+  displayedColumns: string[] = ['name', 'lastname', 'position', 'country', 'actions'];
+  dataSource!: MatTableDataSource<CreateUpdatePlayer>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private service:PlayerService,public dialog: MatDialog) { }
+  constructor(private service: PlayerService, public dialog: MatDialog, private shareData: ShareService) { }
 
   ngOnInit(): void {
     this.allPlayers
   }
 
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  //   this.dataSource.sort = this.sort;
-  // }
+  editPlayer(player: PlayerView) {
+    console.log(player)
+    this.shareData.open.emit(player)
+    this.allPlayers
+  }
+  deletePlayer(id: number) {
+    //delete
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -42,18 +48,19 @@ export class PlayerViewComponent implements OnInit {
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(PlayerCreateComponent,{
-      width: '800px',
+    this.dialog.open(PlayerCreateComponent, {
+      width: '600px',
       enterAnimationDuration,
       exitAnimationDuration,
 
-        })};
+    })
+  };
 
-  get allPlayers(){
-    return this.service.getAllPLayer().subscribe(resp=>{
-    this.dataSource = new MatTableDataSource(resp);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  get allPlayers() {
+    return this.service.getAllPLayer().subscribe(resp => {
+      this.dataSource = new MatTableDataSource(resp);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     })
   }
 

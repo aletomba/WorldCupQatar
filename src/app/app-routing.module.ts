@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
+
   {
     path:'match',
     loadChildren:()=>import('./match/match.module').then(m=>m.MatchModule)
@@ -13,6 +15,10 @@ const routes: Routes = [
   {
     path:'player',
     loadChildren:()=>import('./player/player.module').then(m=>m.PlayerModule)
+  },
+  {
+    path:'statistics',
+    loadChildren:()=>import('./statistic/statistics/statistics.module').then(m=>m.StatisticsModule)
   }
 ];
 

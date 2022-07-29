@@ -5,6 +5,7 @@ import { PlayerRoutingModule } from './player-routing.module';
 import { PlayerViewComponent } from './player-view/player-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerCreateComponent } from './player-create/player-create.component';
+import { PlayerService } from './services/player.service';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { PlayerCreateComponent } from './player-create/player-create.component';
     PlayerViewComponent,
     PlayerCreateComponent
 
+  ],
+  providers:[
+    PlayerService
   ]
 })
 export class PlayerModule { }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SideBarModule } from './side-bar/side-bar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SideBarModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

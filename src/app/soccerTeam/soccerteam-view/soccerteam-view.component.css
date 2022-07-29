@@ -4,8 +4,12 @@ table {
 
 }
 
+.container{
+  width: 100%;
+}
+
 th{
-  width: 15%;
+  width: 20%;
   font-size: medium;
   color:aliceblue;
   border-color: aliceblue;
@@ -18,14 +22,17 @@ div{
   height: 80%;
 
 }
-
+mat-divider{
+  background-color: aliceblue;
+}
 .pointer{ cursor: pointer;}
 
 h1{
   text-align: center;
-  margin-top: auto;
+  margin-top: 0px;
   font-weight: bold;
-  margin-top: 3px;
+  color: aliceblue;
+  background-color: black;
 }
 a{
   text-align: right;
@@ -34,6 +41,7 @@ td{
   color:black;
   border-color: black;
   font-weight: bold;
+  width: 20%;
 }
 .btn-add{
   margin-top: 0px;

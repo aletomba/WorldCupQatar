@@ -8,12 +8,19 @@ import { SharedModule } from '../shared/shared.module';
 import { MatchCreateComponent } from './match-create/match-create.component';
 import { MatchService } from './services/match-service';
 import { SoccerteamService } from '../soccerTeam/services/soccerteam.service';
+import { ShareService } from '../services/share.service';
+import { MatchResultComponent } from './match-result/match-result.component';
+import { MatchSixteenComponent } from './sixteenView/match-sixteen/match-sixteen.component';
+
 
 
 @NgModule({
   declarations: [
     MatchViewComponent,
     MatchCreateComponent,
+    MatchResultComponent,
+    MatchSixteenComponent,
+
 
   ],
   imports: [
@@ -30,6 +37,7 @@ import { SoccerteamService } from '../soccerTeam/services/soccerteam.service';
   providers:[
     MatchService,
     SoccerteamService,
+    ShareService
   ]
 
 

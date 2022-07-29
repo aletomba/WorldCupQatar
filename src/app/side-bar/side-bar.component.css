@@ -2,4 +2,21 @@
   background-color:black;
   }
 
+.btnNav{
+  width: 150px;
+}
 
+.back{
+  width:100%;
+  height: 90%;
+  margin: auto;
+}
+.mat-sidenav-container{
+width: 100%;
+height: 100%;
+background-image: url(https://library.sportingnews.com/styles/twitter_card_120x120/s3/2021-10/fifa-2022-world-cup-logo-qatar_z5t4wjudq9ty1mh5kqpn38ott.jpg?itok=EC9Y27cF);
+background-size: 100% 91%  ;
+background-repeat: no-repeat;
+background-position: 0px 60px;
+background-attachment:fixed;
+}

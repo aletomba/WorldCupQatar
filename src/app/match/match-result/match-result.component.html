@@ -1,0 +1,47 @@
+
+<br>
+<h1 style="font-weight: bold;">{{action}} Partido</h1>
+<br>
+<form appearance="fill" fxLayoutAlign="center" autocomplete="off" (ngSubmit)="saveOrUpdate()" [formGroup]="miForm">
+  <div fxLayout="row" fxLayoutGap="400px" fxLayout.xs="column">
+    <div fxFlex='100' fxLayout="column">
+      <div fxLayout="row" fxLayout.xl="column" fxLayoutGap="20px">
+        <mat-label class="team">
+          {{resultMatch.team1}}
+       </mat-label>
+
+      </div>
+      <div fxLayout="row" fxLayout.xl="column" fxLayoutGap="20px">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Goles</mat-label>
+          <textarea required type="text" formControlName="goalsTeam1" matInput placeholder="Ingrese un Nombre"></textarea>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xl="column" fxLayoutGap="20px">
+        <mat-label class="team">
+          {{resultMatch.team2}}
+       </mat-label>
+      </div>
+      <div fxLayout="row" fxLayout.xl="column" fxLayoutGap="20px">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Goles</mat-label>
+          <textarea required type="text" formControlName="goalsTeam2" matInput placeholder="Ingrese un Nombre"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="button">
+        <div class="save" fxLayout>
+          <button mat-raised-button type="submit"cdkFocusInitial color="accent" >
+            <mat-icon>edit</mat-icon>
+            {{buttonName}}
+          </button>
+        </div>
+        <div class="cancel" fxLayout>
+          <button mat-raised-button mat-button mat-dialog-close cdkFocusInitial color="primary">
+            <mat-icon>close</mat-icon>
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -14,8 +14,16 @@ mat-form-field{
 }
 .button{
   display:flex;
-  width: auto;
 }
 .cancel{
   margin-left: auto;
 }
+
+.team{
+  font-weight: bold;
+  font-size: x-large;
+  margin: auto;
+}
+
+
+

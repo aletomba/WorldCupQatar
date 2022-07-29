@@ -1,0 +1,28 @@
+mat-card{
+  width: 80px;
+  font-weight: bold;
+}
+
+mat-grid-tile{
+  font-weight: bold;
+  font-size: x-large;
+  color: aliceblue;
+
+}
+h1{
+  font-weight: bold;
+  margin-top: -1px;
+  text-align: center;
+  color:whitesmoke;
+  font-size:xx-large;
+
+}
+.container{
+width: 80%;
+margin: auto;
+background-image: url('https://elsol-compress-release.s3-accelerate.amazonaws.com/images/large/1638529076802Copa%20FIFA.jpg');
+background-position: 10px -250px;
+background-repeat: no-repeat;
+height: 400px;
+}
+

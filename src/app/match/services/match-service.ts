@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  Observable } from 'rxjs';
-import { InstaceView } from '../interfaces/InstaceViewInterface';
+
 import { MatchCreateUpdate } from '../interfaces/match-create-update'
-import { MatchViewModels } from '../interfaces/MatchViewInterface';
+import { MatchType } from '../interfaces/match-type';
 import { StadiumView } from '../interfaces/StadiumViewinterface';
 
 
@@ -12,24 +12,27 @@ import { StadiumView } from '../interfaces/StadiumViewinterface';
 })
 export class MatchService {
 
-  private url:string='http://localhost:1186'
+  private url:string='http://localhost:5187'
 
 
   constructor(private http:HttpClient) { }
 
   searchMatches():Observable<MatchCreateUpdate[]>{
 
-    return this.http.get<MatchCreateUpdate[]>(this.url+'/api/Matches')
-
+    return this.http.get<MatchCreateUpdate[]>(this.url+'/Matches/all')
    }
 
-   createMatch(newMatch:MatchCreateUpdate){
-    this.http.post(this.url+'/api/Matches',newMatch).subscribe();
-
+   getSixteen():Observable<MatchCreateUpdate[]>{
+    return this.http.get<MatchCreateUpdate[]>(this.url+'/Matches/GetMatchesByType?matchType=2')
    }
 
-   editMatch(edit:MatchCreateUpdate){
-    this.http.put(this.url+'/api/Matches',edit).subscribe();
+
+   createMatch(newMatch:MatchCreateUpdate):Observable<MatchCreateUpdate[]>{
+    return this.http.post<MatchCreateUpdate[]>(this.url+'/Matches/Create Matches',newMatch);
+   }
+
+   editMatch(edit:MatchCreateUpdate):Observable<MatchCreateUpdate[]>{
+    return this.http.put<MatchCreateUpdate[]>(this.url+'/Matches/edit',edit);
    }
 
    deleteMatch(id:undefined){
@@ -42,7 +45,10 @@ export class MatchService {
     return this.http.get<StadiumView[]>(this.url + '/api/Stadium')
    }
    //--------------InstanceService-----------------------
-   getInstance():Observable<InstaceView[]>{
-    return this.http.get<InstaceView[]>(this.url + '/api/Instance')
+   getInstance():Observable<MatchType[]>{
+    return this.http.get<MatchType[]>(this.url + '/api/MatchType')
+   }
+
+
 }
-}
+

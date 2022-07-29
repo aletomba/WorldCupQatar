@@ -1,7 +1,8 @@
 export interface PlayerView {
-  idPLayer: number;
+  idPLayer?: number;
   name:     string;
-  lastName: string;
+  lastname: string;
+  idTeam:   string;
   position: string;
-  country:  string;
+  number:   string;
 }
